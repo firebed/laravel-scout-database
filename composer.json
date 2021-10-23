@@ -1,0 +1,41 @@
+{
+  "name": "firebed/laravel-scout-database",
+  "description": "Laravel scout database driver using mysql match against queries for searches.",
+  "keywords": ["laravel", "scout", "database", "mysql"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Okan Giritli",
+      "email": "okan.giritli@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^8.0",
+    "illuminate/database": "^8.65",
+    "laravel/scout": "^9.3",
+    "ext-intl": "*",
+    "ext-iconv": "*"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest"
+  },
+  "autoload": {
+    "psr-4": {
+      "Firebed\\Scout\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Firebed\\Scout\\MySqlEngineServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

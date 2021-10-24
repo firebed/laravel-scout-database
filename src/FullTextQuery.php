@@ -6,7 +6,7 @@ use Transliterator;
 
 class FullTextQuery
 {
-    private const FT_MIN_WORD_LENGTH = 3;
+    private const FT_MIN_WORD_LEN = 2;
     
     public function prepareForSearch(array $tokens): array|string|null
     {
@@ -20,7 +20,7 @@ class FullTextQuery
     {
         $tokens = $this->prepare($tokens);
         
-        return array_filter($tokens, static fn($token) => mb_strlen($token) >= self::FT_MIN_WORD_LENGTH);        
+        return array_filter($tokens, static fn($token) => mb_strlen($token) >= self::FT_MIN_WORD_LEN);        
     }
 
     private function prepare(array $tokens): array

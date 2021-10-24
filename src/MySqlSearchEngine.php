@@ -181,7 +181,7 @@ class MySqlSearchEngine extends Engine
 
         $tokens = $this->tokenizer->tokenize($builder->query);
         $tokens = $this->fullText->prepareForSearch($tokens);
-        
+        $tokens = implode(' ', $tokens);
         return $this->query()
             ->select('objectID')
             ->where('index', '=', $index)
